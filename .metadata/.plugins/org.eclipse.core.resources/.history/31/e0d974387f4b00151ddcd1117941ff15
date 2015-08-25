@@ -34,15 +34,10 @@ public class RollDice{
    */
    private Dice Pair;
    
-   //create a private variable to hold the sum for the set method
-   private int sum;
-   
    /*
    * Constructor:  Initialize the object
    * Specifically initialze the stats and Pair attributes
    */
-   
-   	
    public RollDice(){
 
    }
@@ -53,11 +48,8 @@ public class RollDice{
    public void set(){
 	   Random rand = new Random();
 	   
-	   int die1 = rand.nextInt(6) + 1;
-	   int die2 = rand.nextInt(6) + 1;
-	   
-	   sum = die1+die2;
-	   
+	   int die1 = rand.nextInt()(6);
+	   int die2 = rand.nextInt()(6);
 	   
 	   
    }
