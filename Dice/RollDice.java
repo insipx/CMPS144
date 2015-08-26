@@ -1,5 +1,7 @@
 /*
-* NAME:
+* NAME: Andrew Plaza
+* 
+* Collaborated on it with Sean Batzel
 *
 *
 * Who did you help?
@@ -32,7 +34,7 @@ public class RollDice{
    /*
    * Attribute to hold an instance of a pair of dice
    */
-   private Dice Pair;
+   private Dice pair;
    
    //create a private variable to hold the sum for the set method
    private int sum;
@@ -51,22 +53,18 @@ public class RollDice{
    * Perform the action of rolling a the pair of dice
    */
    public void set(){
-	   Random rand = new Random();
-	   
-	   int die1 = rand.nextInt(6) + 1;
-	   int die2 = rand.nextInt(6) + 1;
-	   
-	   sum = die1+die2;
-	   
-	   
-	   
+	   pair = new Dice();
+	   pair.roll();   
    }
    
    /*
    * Return the sum of the pair of dice
    */
    public Integer getSum(){
-
+	   for (int i = 0; i < stats.length; i++){
+		   
+		   sum += stats[i];
+	   }
 	   return sum; 
    }
    
@@ -74,8 +72,23 @@ public class RollDice{
    * Rolls the object's pair of dice the prescribed number
    * of times and records the results in the stats array
    */
-   public void roll(Integer Num){
-
+   public void roll(Integer num){
+	   
+	   stats = new Integer[num];
+	   
+	   for(int i = 0; i < num; i++){
+		   
+		   //roll (or "set") the die
+		   set();
+		   //get the dies
+		   int die1 = pair.get(1);
+		   int die2 = pair.get(2);
+		   //add the dies and add the "result" to the array
+		   stats[i] = die1 + die1;
+		   
+	   }
+	   
+	   
       }      
    
    
@@ -83,8 +96,7 @@ public class RollDice{
    * return the stats array.
    */
    public Integer[] results(){
-	return stats;
-
+	return stats; 
    }   
 
 }
