@@ -5,16 +5,19 @@
 *
 *
 * Who did you help?
-*
+* Sean Batzel
 *
 * How?
-*
+*Collaborated, looked at code. 
+*Offered suggestions on commenting/cleared up confusions he had
 *
 * Who helped you?
-*
+* Sean Batzel
 *
 * How?
-*
+* Offered suggestions
+* 
+* removed repetitivity
 *
 */
 
@@ -53,7 +56,9 @@ public class RollDice{
    * Perform the action of rolling a the pair of dice
    */
    public void set(){
+	   //initialize Dice object
 	   pair = new Dice();
+	   //use the method in Dice to set each die 
 	   pair.roll();   
    }
    
@@ -61,8 +66,9 @@ public class RollDice{
    * Return the sum of the pair of dice
    */
    public Integer getSum(){
+	   //iterate through rollDice, adding each item to sum
 	   for (int i = 0; i < stats.length; i++){
-		   
+		//add an item in stats to sum		   
 		   sum += stats[i];
 	   }
 	   return sum; 
@@ -73,7 +79,7 @@ public class RollDice{
    * of times and records the results in the stats array
    */
    public void roll(Integer num){
-	   
+	  //initialize stats variable  
 	   stats = new Integer[num];
 	   
 	   for(int i = 0; i < num; i++){
