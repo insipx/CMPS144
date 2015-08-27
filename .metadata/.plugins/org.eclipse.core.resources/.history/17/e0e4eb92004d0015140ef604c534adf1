@@ -1,5 +1,5 @@
 /*
-Name: Andrew Plaza
+Name: Andrew Plaza\
 
 Who did you help?
 
@@ -26,6 +26,7 @@ Complete HiLoGame.java that allows a person to play agains the computer and gues
 
 
 */
+ 
    import java.util.*;
    import javax.swing.*;
 	
@@ -72,13 +73,12 @@ Complete HiLoGame.java that allows a person to play agains the computer and gues
          if(Guess == Target){
                   // Insert code to handle this situation
 
-        	 		//else
-        	 		
+
+         else
                   // Insert code to handle this situation
 
 
       }
-  }
    
        public static void main(String argv[]){
          String[] commands = {

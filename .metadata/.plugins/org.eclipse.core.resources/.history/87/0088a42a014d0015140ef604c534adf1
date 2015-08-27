@@ -69,16 +69,15 @@ Complete HiLoGame.java that allows a person to play agains the computer and gues
             NoOfGuesses++;
             Guess = new Integer(data);
          }
-         if(Guess == Target){
+         if(Guess == Target)
                   // Insert code to handle this situation
 
-        	 		//else
-        	 		
+
+         else
                   // Insert code to handle this situation
 
 
       }
-  }
    
        public static void main(String argv[]){
          String[] commands = {
