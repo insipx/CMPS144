@@ -46,41 +46,34 @@ Complete HiLoGame.java that allows a person to play agains the computer and gues
          while((Guess!=Target)&&(NoOfGuesses!=8)){
             if(Guess != Target){
                if(Guess < Lo){
-                 //Give an error message if a user guesses out of range
+                  // Insert code to handle this situation
             	JOptionPane.showMessageDialog(null,"You chose a number not in range, guess again", "You chose a number not in range, guess again", JOptionPane.ERROR_MESSAGE);
                } 
                else if (Guess > Hi){Guess = new Integer(data);
-              //give an error message if a user guesses out of range
+              
         	   JOptionPane.showMessageDialog(null,"You chose a number not in range, guess again", "You chose a number not in range, guess again", JOptionPane.ERROR_MESSAGE);  
                } 
                else if (Guess < Target){
-                  //set the Low value to guess, since the user guessed too low. This will adjust the range.
+                  // Insert code to handle this situation
             	   Lo = Guess;
             	   JOptionPane.showMessageDialog(null, "You're a bit low. Try Again", "You're a bit low, try again", JOptionPane.INFORMATION_MESSAGE);
                } 
                else {
-            	   //set the high value to guess, since the user guessed too high, and this will adjust the range.
                    Hi = Guess;
             	   JOptionPane.showMessageDialog(null, "You're a bit high. Try again", "You're a bit high, try again", JOptionPane.INFORMATION_MESSAGE);
                }
             }
             NoOfGuesses++;
-            //prompt the user to guess again.
-            data = JOptionPane.showInputDialog(null, "The number is between "+Lo+" and "+Hi+" (inclusive) \nMake your guess.", Title, 1);
+            data = JOptionPane.showInputDialog(null, "The number is between "+Lo+" and "+Hi+"\nMake your guess.", Title, 1);
             Guess = new Integer(data);
          }
          if(Guess == Target){
-        	// The normal user wouldn't understand if they had "0" guesses, or an amount of guesses that wouldn't make sense if they started counting from 1, 
-        	 // like everyone *but* computer scientists do. Therefore, add one to the guess count so it's more understandable
-        	 NoOfGuesses += 1; 
+                  // Insert code to handle this situation
         	 JOptionPane.showMessageDialog(null, "You guessed correctly! It took you "+ NoOfGuesses +" guesses to correctly guess " + Target + ". You Win! :-)", "You guessed correctly! It took you "+ NoOfGuesses +" to guess correctly. You Win! :-)", JOptionPane.INFORMATION_MESSAGE);
            
       }
          else{
-        	 
-        	 // The normal user wouldn't understand if they had "0" guesses, or an amount of guesses that wouldn't make sense if they started counting from 1, 
-        	 // like everyone *but* computer scientists do. Therefore, add one to the guess count so it's moreS
-        	 JOptionPane.showMessageDialog(null, "You're out of guesses! You Lose :-(. The correct guess was " + Target + ". You guessed incorrectly " +NoOfGuesses + " times ","You're out of guesses! You Lose :-(",JOptionPane.INFORMATION_MESSAGE);
+    	    JOptionPane.showMessageDialog(null, "You're out of guesses! You Lose :-(. The correct guess was" + Target + "you guessed","You're out of guesses! You Lose :-(",JOptionPane.INFORMATION_MESSAGE);
     	 }
          
          

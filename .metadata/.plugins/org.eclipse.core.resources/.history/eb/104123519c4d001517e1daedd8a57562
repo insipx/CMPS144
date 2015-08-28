@@ -65,7 +65,6 @@ Complete HiLoGame.java that allows a person to play agains the computer and gues
                }
             }
             NoOfGuesses++;
-            //prompt the user to guess again.
             data = JOptionPane.showInputDialog(null, "The number is between "+Lo+" and "+Hi+" (inclusive) \nMake your guess.", Title, 1);
             Guess = new Integer(data);
          }
