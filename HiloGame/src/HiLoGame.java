@@ -47,37 +47,36 @@ Complete HiLoGame.java that allows a person to play agains the computer and gues
             if(Guess != Target){
                if(Guess < Lo){
                   // Insert code to handle this situation
-
-
+            	JOptionPane.showMessageDialog(null,"You chose a number not in range, guess again", "You chose a number not in range, guess again", JOptionPane.ERROR_MESSAGE);
                } 
-               else if (Guess > Hi){
-                  // Insert code to handle this situation
-
-
+               else if (Guess > Hi){Guess = new Integer(data);
+              
+        	   JOptionPane.showMessageDialog(null,"You chose a number not in range, guess again", "You chose a number not in range, guess again", JOptionPane.ERROR_MESSAGE);  
                } 
                else if (Guess < Target){
                   // Insert code to handle this situation
-
-
+            	   Lo = Guess;
+            	   JOptionPane.showMessageDialog(null, "You're a bit low. Try Again", "You're a bit low, try again", JOptionPane.INFORMATION_MESSAGE);
                } 
                else {
-                  // Insert code to handle this situation
-
-
+                   Hi = Guess;
+            	   JOptionPane.showMessageDialog(null, "You're a bit high. Try again", "You're a bit high, try again", JOptionPane.INFORMATION_MESSAGE);
                }
             }
             NoOfGuesses++;
+            data = JOptionPane.showInputDialog(null, "The number is between "+Lo+" and "+Hi+"\nMake your guess.", Title, 1);
             Guess = new Integer(data);
          }
          if(Guess == Target){
                   // Insert code to handle this situation
-
-        	 		//else
-        	 		
-                  // Insert code to handle this situation
-
-
+        	 JOptionPane.showMessageDialog(null, "You guessed correctly!", "You guessed correctly!", JOptionPane.INFORMATION_MESSAGE);
+           
       }
+         else{
+    	    JOptionPane.showMessageDialog(null, "You guessed incorrectly. Try Again.", "You Guessed incorrectly. Try Again.",JOptionPane.INFORMATION_MESSAGE);
+    	 }
+         
+         
   }
    
        public static void main(String argv[]){
