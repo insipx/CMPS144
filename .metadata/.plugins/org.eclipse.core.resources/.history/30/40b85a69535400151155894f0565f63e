@@ -24,25 +24,18 @@ public class FlipFlop {
    * Complete this method, meaningfully formatted
    * Include in-line comments that explain each line of code
    */
-	 //Start the iteration at 1 and iterate until i hits the number set as "Max".  
+	   
 	   for (int i =1; i <= Max;i++){
 		   
-		  //if a divides into i an even number of times (with a remainder of 0) and b divides into i an even number of times (with a remainder of 0) print FlipFlop.
-		  //This specific case needs to be checked for first, because otherwise only "Flip" or "Flop" alone would be printed, instead of "FlipFlop" since both a and b divide into it.
-		  if (i%a == 0 && i % b ==0){
-			  System.out.println("FlipFlop");
-		   }
-		  //if a divides into i evenly print flip
-		  else if (i % a == 0){
+		  if (i % a == 0){
 			  System.out.println("Flip");
 		  }
-		  //if b divides into i evenly print flop
 		  else if (i%b == 0){
 			  System.out.println("Flop");
 		  }
-		  //if nothing divides into i evenly just print i itself
 		  else{
-			  System.out.println(i);
+		   
+		  System.out.println(i);
 		  }
 		   
 	   }
