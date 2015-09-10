@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+import java.util.Comparator;
+
+public class FSJSGOrder implements Comparator<Student> {
+
+
+	
+	public int compare(Student left, Student right){
+		
+	   protected ArrayList<String> classOrder = new ArrayList();
+		
+		classOrder.add("Freshman");
+		classOrder.add("Sophomore");
+		classOrder.add("Junior");
+		classOrder.add("Senior");
+		classOrder.add("Graduate");
+		
+		
+		return 0;
+		
+		
+		
+	}
+}
