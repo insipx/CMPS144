@@ -28,6 +28,7 @@ public class FSJSGOrder implements Comparator<Student> {
 		}
 		
 		
+		return 0;
 		
 	}
 }
