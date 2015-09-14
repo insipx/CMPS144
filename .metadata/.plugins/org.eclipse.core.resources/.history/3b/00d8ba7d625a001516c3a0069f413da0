@@ -5,9 +5,7 @@ public class StudentArrayTest {
 
 	public static void main(String argv[]) throws IOException {
 		//Comparator<Student> sc = new MajorOrder();
-		//Comparator<Student> sc = new StudentAlpha();
-		//Comparator<Student> sc = new FSJSG3Order();
-		Comparator<Student> sc = new FSJSGAlphaOrder();
+		Comparator<Student> sc = new StudentAlpha();
 		StudentArraySupport ss = new StudentArraySupport();
 		Student[] ST = ss.constructArray("StudentData.txt");
 		Arrays.sort(ST, 0, ss.getAmount(), sc);
