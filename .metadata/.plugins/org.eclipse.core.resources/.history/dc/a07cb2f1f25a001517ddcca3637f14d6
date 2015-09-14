@@ -9,7 +9,11 @@ public class FSJSGAlphaOrder implements Comparator<Student>{
       int j = alphaOrder.compare(left, right);
       
       if (i == 0){return alphaOrder.compare(left, right);}
-      else{ return classOrder.compare(left, right);}
+      else{
+    	  return classOrder.compare(left, right);
+    	  
+    	  
+      }
    
 
    }
