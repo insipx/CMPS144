@@ -84,14 +84,14 @@ public class RollDice{
 	   
 	   for(int i = 0; i < num; i++){
 		   
-		   //roll (or "set") the die
+		   //roll (or "set") the die fund
 		   set();
 		   //get the dies
 		   int die1 = pair.get(1);
 		   int die2 = pair.get(2);
 		   //add the dies and add the "result" to the array
 		   stats[i] = die1 + die2;
-		   
+
 	   }
 	   
 	   

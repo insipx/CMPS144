@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class FSJSGAlphaOrder implements Comparator<Student>{
+
+   public int compare(Student left, Student right){
+      Comparator<Student> classOrder = new FSJSGOrder();
+      Comparator<Student> alphaOrder = new StudentAlpha();
+      int i = classOrder.compare(left, right);
+      if (this this and this) {
+    	  
+      }
+      else{
+    	  this
+    	  
+      }
+      return 0;
+
+
+   }
+
+}
