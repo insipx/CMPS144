@@ -68,11 +68,9 @@ public class FibonacciArrayList {
       max = new Integer(data);
       ArrayList<Integer> A = Fibonacci(max);
       System.out.println("There are " + A.size()+ " Fibonacci numbers less than "+max);
-      //let's inform the user that the numbers being printed out are the fibonacci numbers
-      System.out.println("The Numbers Are: \n");
       //iterate through the ArrayList A, one by one, printing each number out to the user
       for (int i = 0; i< A.size(); i++){
-       System.out.println(A.get(i));	  
+       System.out.print(A.get(i) + "\t");	  
       }
       
      
