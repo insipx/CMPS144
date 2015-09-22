@@ -42,34 +42,29 @@ public class RandomGapTest {
    public void RunTest(Integer Num){
 	   
 	   
-	  /// for (int repeat = 0; repeat < Num; repeat++){
+	   for (int repeat = 0; repeat < Num; repeat++){
 	   
 	   ArrayList<Integer> testArray = new ArrayList<Integer>();
 	      
 	   	  Random rand = new Random();
 	      for (int i=0; i< range; i++){
 	    	  testArray.add(rand.nextInt(range));
-	    	  System.out.println("And this is the testArray" + i);
 	      }
-	   //this is to loop through range abstractly
+	   //Loop through Gap in order to see how many gaps occur in the testArray
 	   for (int i = 0; i < Gap.size(); i++){
+		
 		   
-		   System.out.println("This is gap size" + Gap.size());
-		   int gapcount = 0;
 		   //this loops through the range to see if any gaps occur. This should measure frequency of gaps
-		   for(int j =0; j < testArray.size(); j++ ){
+		   for(int j = 1; j < testArray.size(); j++ ){
 	 		  
 	    		  if (testArray.get(i) == j){
-	    			  gapcount++;
+	    			  Gap.set(i, Gap.get(i)+ 1);
 	    		  }
 	    		
-	    	  }
-		   
-		   Gap.add(i, Gap.get(i)+gapcount);
-		    
+	    	  }  
 	    	  
 	      }
-  // }
+   }
 }
    public ArrayList<Integer> GetGapData(){
       return this.Gap;
