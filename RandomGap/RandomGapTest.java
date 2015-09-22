@@ -53,6 +53,8 @@ public class RandomGapTest {
 	      }
 	   //this is to loop through range abstractly
 	   for (int i = 0; i < Gap.size(); i++){
+		   
+		   System.out.println("This is gap size" + Gap.size());
 		   int gapcount = 0;
 		   //this loops through the range to see if any gaps occur. This should measure frequency of gaps
 		   for(int j =0; j < testArray.size(); j++ ){
