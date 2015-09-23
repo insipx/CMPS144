@@ -19,7 +19,7 @@ public class RandomGapTest {
 
    private Integer range;
 
-   private Integer[] Uniform;
+   //private Integer[] Uniform;
 
    
 // Add attribute(s) to collect gap test data
@@ -40,43 +40,76 @@ public class RandomGapTest {
 
    public void RunTest(Integer Num){
 	   
-	   
-	   for (int repeat = 0; repeat < Num; repeat++){
-	   
 	   ArrayList<Integer> testArray = new ArrayList<Integer>();
-	      
+
 	   Random rand = new Random();
 	   
 	   //create the test array for random numbers
-	   for (int i=0; i< range; i++){
+	   for (int i=0; i< Num; i++){
 		   testArray.add(rand.nextInt(range));
 	       }
+	 
+	   ArrayList<Integer> count = new ArrayList<Integer>();
 	   
-	   //Loop through Gap in order to see how many gaps occur in the testArray
-	   for (int i = 0; i < Gap.size(); i++){
-		   boolean foundNum = false; 
-		   //this loops through the range to see if any gaps occur. This should measure frequency of gaps
-		   for(int j = 0; j < testArray.size(); j++ ){
-	 		  
+	   //for counting numbers
+///	   for(int i =0; i< Num; i++){
+		   ///count.add(0);
+//	   }
+	   
+	   for (int i = 0; i < testArray.size(); i++){
+		   
+		   for (int j = 0; j < range; j++){
 			   
-			   //WHAT I HAVE TO DO
-			   //first find number
-			   //then check if i==j
-			   //because rn i==j for the first time does not find a gap, it just finds the first occurrence of a number
-			   //Gap.set(i, Gap.get(i)+ 1);
-	    		  if (testArray.get(i) == j && foundNum == false)  {
-	    			  foundNum = true;
-	    		  }
-	    		  else if (testArray.get(i) == j && foundNum == true){
-	    			  Gap.set(i, Gap.get(i) + 1);
-	    		  }
-	    		  
-	    		
-	    	  }  
-	    	  
-	      }
-   }
+			   
+			   if(j == testArray.get(i)){
+				   
+				   
+				   
+				   int k = i+1;
+				 try{
+					   while(j != testArray.get(k)){
+					   
+						   k++;
+					   
+					   }
+				 }catch(Exception e){
+					 
+				 }
+					   		if((k-i) > range -1){
+					   			Gap.set(0, Gap.get(0) +1 );
+					   		}
+					   		else{
+					   			Gap.set((k-i), Gap.get(k-i) + 1);
+					   		}
+				   
+			   
+				 
+				   
+			   }
+			   
+			   
+			   
+		   } 
+		   
+		   
+		   
+	   }
+	   
+	  
+	   
+	   	
+	   
+	   
+	   
+	   
+	   
+
+	   
+   
 }
+   
+
+
    public ArrayList<Integer> GetGapData(){
       return this.Gap;
    }

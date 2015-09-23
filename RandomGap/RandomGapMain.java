@@ -5,7 +5,7 @@ public class RandomGapMain {
 
    public static void main(String[] arg)throws IOException{
       
-      Integer range = 200;
+      Integer range = 20;
       RandomGapTest Test = new RandomGapTest(range);
       
       Test.RunTest(5000);
