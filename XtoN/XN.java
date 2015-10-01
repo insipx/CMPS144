@@ -1,3 +1,4 @@
+import java.lang.Math;
 /**
 * Explain algorithm timing here
 *
@@ -23,12 +24,20 @@
          assert n>=0: "'n' cannot be negative";
          double one = 1.0;
       	// Complete the recursive algorithm
-         if(x == 0.0) 
-            return 0.0;
-         else if(n == 0) 
-            return 1.0;
-         // Complete the algorithm
-         return 0;
+         if(x == 0.0) return 0.0;
+         else if(n == 0) return one;
+         else if(n==one) return x;
+         else if (n%2 !=0){
+        	 double power = XToTheN(x,n-1);
+        	 return XToTheN(x, (int)(power));
+         }
+         else{
+        	 
+        	 double power = x*x;
+        	 return XToTheN(power, n/2);
+        	 
+         }
+         
          
       }
    
