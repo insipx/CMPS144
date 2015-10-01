@@ -59,23 +59,12 @@ public class RandomGapTest {
 					// testArray which is the same as the number we have already
 					// found
 					int k = i + 1;
-					// created a try-catch block, because towards the end of the
-					// loop some numbers don't have a gap since they extend past
-					// the bounds of testArray, crashing the program
-					// this will occur 20 times since we are checking through
-					// twenty numbers
-					// if you uncomment the Sys.err message you will see this is
-					// true
-					try {
-						while (j != testArray.get(k)) {
+
+					while (testArray.get(j) != testArray.get(k)) {
 
 							k++;
-
 						}
-					} catch (Exception e) {
-						// System.err.println("IndexOutOfBoundsException: " +
-						// e.getMessage());
-					}
+					
 					// if the difference between k and i (the size of the gap)
 					// is larger than the range, increment 0 instead of printing
 					// all the values out
