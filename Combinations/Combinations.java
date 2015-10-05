@@ -26,7 +26,7 @@
     	 this.counter++;  
          
     	
-    	 //because r cannot be larger than n
+    	 //because r cannot be larger than n, so this subtracts from the factorial, if r is larger than n
     	 if(n < r){ 
     		return -1;
             }
