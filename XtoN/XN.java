@@ -1,8 +1,10 @@
 /**
 * Explain algorithm timing here
-*
-*
+* As the number of calls increases by one, n increases exponentially, more or less, by 2. 
+* the n value seems to closely correspond to the order of 2^n, n being the call (though it is off by one).
+*   
 */
+
     public class XN {
    
       private int counter;
