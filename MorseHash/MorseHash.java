@@ -29,7 +29,7 @@
 
 
          }
-      }
+      
    	
    	/**
    	* Construct the morse2Sym hash by using a for loop that
@@ -104,5 +104,7 @@
          return Answer;
       
       }
+		return Answer;
    	
    }
+    }
