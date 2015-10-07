@@ -18,19 +18,26 @@
    	
    	/**
    	* Constructor reads data file and constructs sym2Morse hash
-   	* Use scanner or other classes to read text file and extract the sym and morse code
+   	* Use scanner or other classes to read text file and extract the symbol and morse code
    	* that appear one per line separated by tab codes
    	* @param Name of more code file
    	*/
        public MorseHash(String fileName) throws IOException {
          this.sym2Morse = new Hashtable<String, String>();
          Scanner s = new Scanner(new File(fileName));
-         // Complete the method
-
-
+        
+       String line = null;
+         
+         while(s.hasNextLine()){
+        	 line = s.nextLine();
+        	 String[] splitLine = line.split("\\s+");
+        	 this.sym2Morse.put(splitLine[0], splitLine[1]);
+        	
+         	}
+         s.close();
+         
          }
       
-   	
    	/**
    	* Construct the morse2Sym hash by using a for loop that
 		* goes through the keys in the sym2Morse table
@@ -38,11 +45,13 @@
 		* morse2Sym hashtable
    	*/
        public void makeReverseHash(){
-         this.morse2Sym = new Hashtable<String, String>();
-         // Complete the method
-
-
-
+       
+    	   this.morse2Sym = new Hashtable<String, String>();
+    	   Set<String> keys = sym2Morse.keySet();
+    	   
+    	   for(String key: keys){
+    		   morse2Sym.put(sym2Morse.get(key), key);  
+    	   }
 
       }
    
@@ -81,9 +90,20 @@
          String Answer = "";
          // Complete the method
 
-
-
-
+         String[] splitMessage = message.trim().split("\\s+");
+         
+         for(int i =0; i < splitMessage.length; i++){
+        	 
+        	 String[] splitChar = splitMessage[i].split("");
+        	 String tempAnswer = " /";
+        	 for(int j = 0; j< splitChar.length; j++){
+        		 
+        		 tempAnswer+= sym2Morse.get(splitChar[j]) + "/"; 
+        	 }
+        	 
+        	 Answer += tempAnswer;
+         }
+         
          return Answer;
       }
    	
@@ -96,14 +116,16 @@
          String Answer = "";
          Scanner s = new Scanner(message).useDelimiter("/");
          while(s.hasNext()){
-         // Complete the method
-
-
-
-
-         return Answer;
-      
+        	 String temp = s.next();
+        	 if (morse2Sym.get(temp) == null){
+        		 Answer += " ";
+        	 }else{ 
+        	 Answer += morse2Sym.get(temp);
+        	 
+        	 }
       }
+        s.close();
+        
 		return Answer;
    	
    }
