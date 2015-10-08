@@ -90,7 +90,7 @@
          String Answer = "";
          // Complete the method
 
-         String[] splitMessage = message.trim().split("\\s+");
+         String[] splitMessage = message.split("\\s+");
          
          for(int i =0; i < splitMessage.length; i++){
         	 
@@ -120,8 +120,7 @@
         	 if (morse2Sym.get(temp) == null){
         		 Answer += " ";
         	 }else{ 
-        	 Answer += morse2Sym.get(temp);
-        	 
+        		 Answer += morse2Sym.get(temp);
         	 }
       }
         s.close();
