@@ -3,6 +3,7 @@
 
 ###Instructions for Eclipse:
 --------------------------
+- make a folder named "lib" and put the jar file into the "lib" folder
 - Copy Lib into the project directory you want
 - "Refresh" the project you are working on and you will see the new lib folder
 - Right click on the jars you need and select "Add to Build Path"
