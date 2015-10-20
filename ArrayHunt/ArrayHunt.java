@@ -66,13 +66,29 @@ If someone helped you, for each person, list who and how you helped.
    
        public String hunt(){
          String answer = "";
-      
-      
-      
-      
-      
-      
-      
+         //make the starting point, in this case the first number in the hunt_tokens file
+         SteppingStone currentStep = path[start];
+         
+         int direction = this.start + currentStep.getDirection();
+         
+         //a while loop which will stop when the direction of the current step is 0
+         while (currentStep.getDirection() != 0){
+        	 //append the symbol to the answer
+        	 answer += currentStep.getSymbol();
+        	 //get the next step
+        	 currentStep = path[direction];
+        	 //figure out what the next direction will be
+        	 direction = direction + currentStep.getDirection();
+        	 
+        	 
+         }
+         //since our while loop ends at value 0, we still need to append the symbol in dir 0
+         //the if case just makes sure we are appending dir 0, and not some other direction
+         //it's more for the safety and well-being of the mind than the impeccable continuity of the program 
+         if(currentStep.getDirection() == 0){
+        	 answer+= currentStep.getSymbol();
+         }
+
          return answer;
       }
    
