@@ -17,13 +17,14 @@
             int num = Integer.parseInt(Token.nextToken());
             if(sym.equals("#")){
                // System.out.print the contents of the "num" queue
-
-
+            	System.out.print(q[num].toString());
+            	q[num] = q[num].emptyQueue();
+            	
 
             } 
             else {
                // Place the "sym" into "num" queue
-
+            	q[num].insert(sym);
 
 
             }
