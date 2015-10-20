@@ -84,7 +84,7 @@ If someone helped you, for each person, list who and how you helped.
          }
          //since our while loop ends at value 0, we still need to append the symbol in dir 0
          //the if case just makes sure we are appending dir 0, and not some other direction
-         //it's more for the safety and well-being of the mind than the impeccable continuity of the program 
+         //it's more for the safety and well-being of my mind than the impeccable continuity of the program 
          if(currentStep.getDirection() == 0){
         	 answer+= currentStep.getSymbol();
          }
