@@ -17,8 +17,13 @@
             int num = Integer.parseInt(Token.nextToken());
             if(sym.equals("#")){
                // System.out.print the contents of the "num" queue
-            	System.out.print(q[num].toString());
-            	q[num] = q[num].emptyQueue();
+            	//while the que isn't empty
+            	while(q[num].isEmpty() == false){
+            		//print the first sym in the queue
+            		System.out.print(q[num].frontOf());
+            		//remove that symbol
+            		q[num].remove();
+            	}
             	
 
             } 
