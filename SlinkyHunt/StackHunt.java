@@ -70,16 +70,16 @@ public class StackHunt implements Hunt {
 	public String hunt(){
 		String answer = "";
 		int move = this.start;
-		int dir = this.start;
+
 		while(move != 0){
 			
 			
 			if(dir < 0){
-				for(int i = 0; i > dir; i--){
+				for(int i = 0; i > move; i--){
 					right.push(left.pop());
 				}	
 		    } else {
-				for(int i = 0; i < dir; i++){
+				for(int i = 0; i < move; i++){
 					left.push(right.pop());
 				}
 			}
@@ -87,7 +87,7 @@ public class StackHunt implements Hunt {
 			
 			answer += right.peek().getSymbol();
 			move = right.peek().getDirection();
-			dir = right.peek().getDirection();
+			
 		}
 		return answer;
 	}
