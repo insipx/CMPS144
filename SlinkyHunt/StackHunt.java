@@ -70,25 +70,31 @@ public class StackHunt implements Hunt {
 	public String hunt(){
 		String answer = "";
 		int move = this.start;
-
+//stop when we reach a direction of 0
 		while(move != 0){
 			
-			
-			if(dir < 0){
+			//if the move necessitates moving backward,
+			if(move < 0){
+				//we need to move backward, so we get the values we pushed into the left stack by popping it
+				//and push it back into the right stack
 				for(int i = 0; i > move; i--){
 					right.push(left.pop());
 				}	
 		    } else {
+		    	//else we are moving forwad and are popping values from the right stack, 
+		    	//pushing them into the left stack
 				for(int i = 0; i < move; i++){
 					left.push(right.pop());
 				}
 			}
 
-			
+			//add the string to the answer
 			answer += right.peek().getSymbol();
+			//get the next move
 			move = right.peek().getDirection();
 			
 		}
+		//return our answer
 		return answer;
 	}
 
