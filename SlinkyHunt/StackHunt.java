@@ -1,6 +1,6 @@
 /*
-NAME:
-If you worked with someone:
+NAME: Andrew Plaza
+If you worked with someone: 
 	List individuals:
 	
 	What was your contribution:
