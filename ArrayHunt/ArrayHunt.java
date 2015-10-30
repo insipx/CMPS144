@@ -78,7 +78,7 @@ If someone helped you, for each person, list who and how you helped.
         	 //get the next step
         	 currentStep = path[direction];
         	 //figure out what the next direction will be
-        	 direction = direction + currentStep.getDirection();
+        	 direction += currentStep.getDirection();
         	 
         	 
          }
