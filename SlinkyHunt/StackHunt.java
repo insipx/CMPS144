@@ -38,7 +38,7 @@ public class StackHunt implements Hunt {
            StringTokenizer token = new StringTokenizer(buffer.readLine(), "\t");
         	// first item is a char, second is an int, make them into a stepping stone object
            SteppingStone stone = new SteppingStone(token.nextToken(), Integer.valueOf(token.nextToken()));
-        	// Place the stone in the array
+        	// Place the stone in the stack
             this.left.push(stone);
             
         	
