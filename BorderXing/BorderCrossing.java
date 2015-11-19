@@ -49,34 +49,38 @@
          while (!Q.isEmpty() & !Finished){
             // Complete the code
             start = Q.remove();
-            start.setColor(1);
+            start.setColor(3);
             M.displayElement(start.getName(), C[start.getColor()], frame);
             for(int i = 0; i < start.noOfNeighbors(); i++){
             	if (start.getNeighbor(i).getQ() != true){
             		start.getNeighbor(i).inQ();
             		start.getNeighbor(i).setParent(start);            		
             		Q.insert(start.getNeighbor(i));
+            		start.getNeighbor(i).setColor(3);
             		//color the map blue
-            		start.getNeighbor(i).setColor(4);
-                    M.displayElement(start.getName(), C[start.getNeighbor(i).getColor()], frame);
+            		//start.getNeighbor(i).setColor(4);
+                    //M.displayElement(start.getName(), C[start.getNeighbor(i).getColor()], frame);
                     
                     if(start.getNeighbor(i) == Node){
                     	Finished = true;
                     }
 
-            		
+                	
             	}
+            	
+                M.displayElement(start.getName(), C[start.getNeighbor(i).getColor()], frame);
 
             }
             
-        	start.setColor(3);
-            M.displayElement(start.getName(), C[start.getColor()], frame);
+        //1 = red
+            //3 == green
         	
-           
-           
+            start.setColor(1);
+            M.displayElement(start.getName(), C[start.getColor()], frame);   
+            
          }
-     	start.setColor(2);
-        M.displayElement(start.getName(), C[start.getColor()], frame);
+        
+     	
     	
        
        
@@ -84,12 +88,15 @@
          
          //I chose to color the path blue
         
-         while(Node != null){
+        while(Node != null){
+       	 	 Node.setColor(4);
+       	 	 M.displayElement(Node.getName(), C[Node.getColor()], frame);
         	 Node = Node.getParent();
-        	 Node.setColor(2);
-             M.displayElement(Node.getName(), C[Node.getColor()], frame);
 
-         }
+             
+        }
+
+         
    	
       }
    }
