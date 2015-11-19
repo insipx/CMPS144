@@ -42,6 +42,8 @@
          //Is THIS the root???????
          NodeInfo start= G.refNode(A);
          NodeInfo Node = G.refNode(B);
+         start.setColor(4);
+         Node.setColor(4);
          Q.insert(start);
          start.inQ();
          while (!Q.isEmpty() & !Finished){
@@ -54,34 +56,37 @@
             		start.getNeighbor(i).inQ();
             		start.getNeighbor(i).setParent(start);            		
             		Q.insert(start.getNeighbor(i));
+            		//color the map blue
             		start.getNeighbor(i).setColor(4);
                     M.displayElement(start.getName(), C[start.getNeighbor(i).getColor()], frame);
+                    
                     if(start.getNeighbor(i) == Node){
                     	Finished = true;
                     }
 
             		
             	}
-            	   start.setColor(3);
-                   M.displayElement(start.getName(), C[start.getColor()], frame);
-            	
-            }
-         
 
-            // Complete the code
-            start.setColor(2);
+            }
+            
+        	start.setColor(3);
             M.displayElement(start.getName(), C[start.getColor()], frame);
+        	
+           
            
          }
+     	start.setColor(2);
+        M.displayElement(start.getName(), C[start.getColor()], frame);
+    	
        
        
          //another node, this one points to B, the one i chose to be the end-point or Node we are trying to get to from the start
          
          //I chose to color the path blue
         
-         while(Node!=null){
+         while(Node != null){
         	 Node = Node.getParent();
-        	 Node.setColor(4);
+        	 Node.setColor(2);
              M.displayElement(Node.getName(), C[Node.getColor()], frame);
 
          }
