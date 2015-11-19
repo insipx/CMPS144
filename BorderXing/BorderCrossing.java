@@ -71,17 +71,16 @@
          }
        
        
-         //another node, this one points to B
-         
+         //another node, this one points to B, the one i chose to be the end-point or Node we are trying to get to from the start
+ 
          while(Node!=null){
-            // Complete the code
-        	 
-            M.displayElement(Node.getName(), C[Node.getColor()], frame);
-            // Complete the code
-         
+        	 System.out.println("THE PARENT OF THIS NODE IS " + Node.getParent().getName());
+        	 Node = Node.getParent();
+        	 Node.setColor(4);
+             M.displayElement(Node.getName(), C[Node.getColor()], frame);
+
+
          }
-         // Code to color the states in the path your found
-         
-      }
    	
+      }
    }
