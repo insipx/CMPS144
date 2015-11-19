@@ -47,7 +47,7 @@
       }
    	
       protected void setColor(Integer i){
-         this.color = i;
+         this.color = i; 
       }
    	
       public Integer getColor(){
