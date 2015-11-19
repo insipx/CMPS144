@@ -72,13 +72,13 @@
        
        
          //another node, this one points to B, the one i chose to be the end-point or Node we are trying to get to from the start
- 
+         
+         //I chose to color the path blue
+        
          while(Node!=null){
-        	 System.out.println("THE PARENT OF THIS NODE IS " + Node.getParent().getName());
         	 Node = Node.getParent();
         	 Node.setColor(4);
              M.displayElement(Node.getName(), C[Node.getColor()], frame);
-
 
          }
    	
