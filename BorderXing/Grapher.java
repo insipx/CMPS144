@@ -18,15 +18,15 @@
          	
 				Seq.add(Name);
             NodeInfo state = refNode(Name);
-         	System.out.print("["+state.getName());
+         	//System.out.print("["+state.getName());
          
             while(T.hasMoreTokens()){
                Name = T.nextToken();
-            	System.out.print("\t-"+Name);
+            	//System.out.print("\t-"+Name);
                NodeInfo Nhbr = refNode(Name);
                state.addNeighbor(Nhbr);
             }
-         	System.out.println("]");
+         	//System.out.println("]");
          	/**/
             System.out.print("["+state.getName()+"("+state.noOfNeighbors()+")");
             for(int i=0; i<state.noOfNeighbors(); i++){
@@ -41,10 +41,10 @@
    	
       public NodeInfo refNode(String name){
          if(!H.containsKey(name)){
-         	System.out.print("++");
+         	//System.out.print("++");
             H.put(name, new NodeInfo(name));
          }
-      		System.out.print("**"+H.get(name).getName()+"\t");
+      		//System.out.print("**"+H.get(name).getName()+"\t");
          return H.get(name);
       }
    	
