@@ -124,25 +124,25 @@
             else {
                deltaX+=150;
             }
-            //make a coordinate object, and get all the coordinates for the letter we are looking for
-            ArrayList<Coordinate> coord = H.get(word.substring(0,1));
-            //loop through all the coordinates, this is the loop that cuts the exhaustive loops out. Turns two loops into 1 loop
-            for(int i = 0; i < coord.size(); i++){
-            	//search in all 8 directions
-            	for(Directions Dir=new Directions(); (!found) && (Dir.hasNext());){
-            		d=(Direction)Dir.next();
-            		//set found to true or false, true if the word is found false if not
-            		found=match(matrix,coord.get(i).r,coord.get(i).c,word,d);
-            		//If it is found, display it, and write to the console
-            		if(found){
-            			displayWord(matrix,coord.get(i).r,coord.get(i).c,word,d);
-            		    System.out.println(word+" found at ("+ coord.get(i).r+","+coord.get(i).c+") heading "+d.getName());
-            		}
-            		
-            	}
-            	
+         	
+            for(Integer i=1; (i<matrix.length-1) && (!found); i++){
+               for(Integer j=1; (j<matrix[i].length-1) && (!found); j++){
+                  F.add(new JRectangle(dx*j, dy*i, dx, dy, Color.black, Color.yellow), 20);
+                  F.add(new JString(dx*j+5, dy*i+25, matrix[i][j], Color.black), 20);
+                  if (matrix[i][j].equals(word.substring(0, 1)) ){
+                     for(Directions Dir=new Directions();(!found) && (Dir.hasNext());){
+                        d = (Direction)Dir.next();
+                        found = match(matrix, i, j, word, d);
+                        if(found){
+                           displayWord(matrix, i, j, word, d);
+                           System.out.println(word+" found at ("+i+","+j+") heading "+d.getName());
+                        }
+                     }
+                  }
+                  F.add(new JRectangle(dx*j, dy*i, dx, dy, Color.black, Color.white), 20);
+                  F.add(new JString(dx*j+5, dy*i+25, matrix[i][j], Color.black), 20);
+               }
             }
-           //If the word is never found write to the console that it is not found 
             if(!found)
                System.out.println(word+" not found");
          }
