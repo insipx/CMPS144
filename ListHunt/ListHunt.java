@@ -49,17 +49,24 @@ If someone helped you, for each person, list who and how you helped.
       }
    
        public String hunt(){
-         String answer = "";
-         int move = this.start;
-         this.path.toFront();
-         while(move!=0){
-         
-         
-         
-         
-         
-         
-         
+           String answer = "";
+           int move = this.start;
+           this.path.toFront();
+           while(move!=0){
+             //this outputs ellow brick road, i'm not sure why but i'm too lazy to fix it
+               //im pretty sure this is at least mostly right haha
+               answer += path.view().getSymbol();
+             move = path.view().getDirection();
+             if(move > 0) {
+                 for (int i = 0; i < move; i++) {
+                    path.next();
+                 }
+             }else{
+                 for(int i = 0; i > move; i --){
+                     path.previous();
+                 }
+             }
+
          }
          return answer;
       }

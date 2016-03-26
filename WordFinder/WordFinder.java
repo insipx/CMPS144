@@ -39,7 +39,8 @@
 				//If it is found, display it, and write to the console
 				if(found){
 					 W.displayWord(i,j, word, d,color );
-					 F.cellBack(i, j, Color.black, color);
+					 //F.cellBack does some voodoo which messes up the colors, so I just removed it. It works better that way. It's pretty that way.
+					// F.cellBack(i, j, Color.black, color);
 					 F.cellContent(i, j, W.mat[i][j], Color.black);
 					 System.out.println(word + "found at ("+ i + ","+ j +") heading "+d.getName());
 				}
